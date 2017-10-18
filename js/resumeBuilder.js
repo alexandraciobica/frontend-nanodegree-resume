@@ -91,13 +91,13 @@ var work = {
 		{
 			"position" : "Front end developer",
 			"employer" : "self",
-			"years" : 2,
+			"dates" : "Sep 2017 - Now",
 			"description" : "I have developed websites and online shops for various clients. In plus, I have designed logos and product labels."
 		},
 		{
 			"position" : "Junior Web Developer",
 			"employer" : "Desix",
-			"years" : 0.2,
+			"dates" : "Aug 2016 - Nov 2016",
 			"description" : "Developed websites in Wordpress, built a custom theme from scratch and developed custom functions, menus and widgets."
 		}
 	]
@@ -150,6 +150,60 @@ var projects = {
 	]
 	
 }
+
+
+
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formattedRole).prepend(formattedName);
+
+
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.phone_no);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.city);
+$("#topContacts").append(formattedEmail).append(formattedMobile).append(formattedLocation);
+
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.pic_url);
+var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcome_msg);
+var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+$("#header").append(formattedBioPic).append(formattedWelcomeMsg).append(HTMLskillsStart).append(formattedSkills);
+
+
+
+
+var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[0].employer);
+var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[0].position);
+var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[0].dates);
+var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[0].description);
+$("#workExperience").append(formattedEmployer).append(formattedWorkTitle).append(formattedWorkDates).append(formattedWorkDescription);
 // $("#main").append(work["position"]);
 // $("#main").append(education.name);
+
+
+
+// var html = '<script src="http://hackyourwebsite.com/eviljavascript.js"></script>';
+
+// var charEscape = function(_html) {
+//     var newHTML = _html;
+//     // How will you make sure that newHTML doesn't contain any < or > ?
+//     // Your code goes here!
+//     newHTML = encodeURI(newHTML);
+
+//     // Don't delete this line!
+//     return newHTML;
+// };
+
+// // Did your code work? The line below will tell you!
+// console.log(charEscape(html));
+
+
+// var charEscape = function(_html) {
+//     var newHTML = _html;
+
+//     newHTML = _html.replace(/</g, "&lt;");
+//     newHTML = newHTML.replace(/>/g, "&gt;");
+
+//     return newHTML;
+// };
 
